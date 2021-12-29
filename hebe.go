@@ -71,7 +71,7 @@ func HandleStatus(hebeBot tgbotapi.BotAPI, update tgbotapi.Update) {
 		msg.Text += StatsRetriveErrorMessage
 	} else {
 		msg.Text += fmt.Sprintf("📊 Estadísticas del Servicio 📊\n"+
-			"🔫 Playing Now: %d\n", playingNow)
+			"🔫 Playing Now: %d\n\n", playingNow)
 
 		if queueStatus, err := csgoapi.GetMatchakingQueueStatus(); err != nil {
 			msg.Text += StatsRetriveErrorMessage
