@@ -1,0 +1,9 @@
+@Library('jenkins-pipeline@master')
+
+helper = new tv.justin.hygienic.Pipeline()
+
+timestamps {
+  node {
+    helper.defaultPipeline()
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "Vendor": true,
+  "MinConfidence": 0.3,
+  "Enable": [
+    "dupl",
+    "errcheck",
+    "goconst",
+    "gocyclo",
+    "gofmt",
+    "goimports",
+    "golint",
+    "gosimple",
+    "ineffassign",
+    "interfacer",
+    "maligned",
+    "misspell",
+    "staticcheck",
+    "structcheck",
+    "testify",
+    "unconvert",
+    "varcheck",
+    "vet",
+    "vetshadow"
+  ]
+}
