@@ -4,6 +4,8 @@ import (
 	"context"
 
 	"github.com/hestingames/hg-hebe-bot/api"
+	hebe "github.com/hestingames/hg-hebe-bot/bot"
+	"github.com/hestingames/hg-hebe-bot/config"
 	"github.com/hestingames/hg-hebe-bot/internal/logs"
 	"go.uber.org/zap"
 )
@@ -26,11 +28,12 @@ func main() {
 	logFn := func(key string, err error, msg string) {
 		logger.Error(msg, zap.Error(err), zap.String("key", key))
 	}
-	loadConfig(logFn)
+	config.LoadConfig(logFn)
 
 	// Initialize CSGO api client
-	api.InitializeCsgoApi(AppConfig.ApiBaseUrl)
+	api.InitializeCsgoApi(config.AppConfig.ApiBaseUrl)
 
 	// Initialize Telegram bot
-	StartHebeBot()
+	hebe.Initialize(logger)
+	hebe.StartBot()
 }

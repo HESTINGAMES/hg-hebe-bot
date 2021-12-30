@@ -1,4 +1,4 @@
-package main
+package config
 
 import (
 	"github.com/hestingames/hg-hebe-bot/internal/distconf"
@@ -14,7 +14,7 @@ type config struct {
 var AppConfig *config
 
 // Configuration will be read from top to bottom of the readers list.
-func loadConfig(log distconf.Logger) {
+func LoadConfig(log distconf.Logger) {
 	jconf := distconf.JSONConfig{}
 	jconf.RefreshFile(configPath)
 	readers := []distconf.Reader{&jconf} // &distconf.Env{}
