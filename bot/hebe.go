@@ -47,6 +47,7 @@ func StartBot() {
 
 		// Ignore message from other chats unless we are in local development environment
 		if update.Message.Chat.ID != csgoGroup && !environment.IsLocal() {
+			events.HandleUnauthorizedMessage(logger, *hebeBot, update)
 			continue
 		}
 
